@@ -1,0 +1,4 @@
+registrarDestino()
+buscarDestino()
+mostrarDestinos()
+modificarDestino()

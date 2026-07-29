@@ -1,0 +1,5 @@
+registrarPasajero()
+mostrarPasajerosDestino()
+consultarPrimerPasajero()
+embarcarPasajero()
+buscarPasajeroDocumento()

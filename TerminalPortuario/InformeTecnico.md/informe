@@ -1,0 +1,143 @@
+Informe Técnico
+Sistema de Gestión del Terminal Portuario Turístico de Buenaventura
+1. Introducción
+
+El presente proyecto tiene como finalidad desarrollar un sistema en lenguaje C para la administración básica del Terminal Portuario Turístico de Buenaventura.
+
+La solución permite gestionar destinos turísticos, pasajeros, viajes programados y procesos de embarque utilizando estructuras de datos dinámicas estudiadas en el curso, tales como colas FIFO, árboles binarios de búsqueda y árboles balanceados Rojo-Negro.
+
+2. Objetivos
+Objetivo General
+
+Diseñar e implementar un sistema en lenguaje C para la gestión de destinos turísticos, pasajeros y viajes programados mediante el uso de estructuras dinámicas y apuntadores.
+
+Objetivos Específicos
+Implementar colas FIFO para la gestión de pasajeros.
+Administrar destinos de forma dinámica mediante listas enlazadas.
+Implementar un árbol Rojo-Negro para almacenar viajes programados.
+Permitir operaciones de búsqueda, inserción y consulta.
+Generar estadísticas relacionadas con pasajeros y destinos.
+3. Estructuras de Datos Utilizadas
+Destinos
+
+Los destinos son almacenados mediante estructuras dinámicas enlazadas mediante apuntadores.
+
+Cada destino contiene:
+
+Código.
+Nombre.
+Empresa responsable.
+Cola de pasajeros.
+Árbol de viajes programados.
+Pasajeros
+
+Los pasajeros se almacenan en colas FIFO independientes para cada destino.
+
+Cada pasajero contiene:
+
+Número de documento.
+Tipo de documento.
+Estado.
+Viajes Programados
+
+Los viajes son almacenados en un árbol Rojo-Negro.
+
+Cada viaje contiene:
+
+Código único.
+Capacidad máxima.
+Color del nodo.
+Apuntadores izquierdo y derecho.
+4. Implementación de las Colas FIFO
+
+Se utilizó una estructura FIFO (First In First Out) para administrar los pasajeros en espera.
+
+El funcionamiento garantiza que el primer pasajero registrado sea el primero en embarcar.
+
+Operaciones implementadas:
+
+Registrar pasajero.
+Consultar primer pasajero.
+Embarcar pasajero.
+Buscar pasajero.
+Contar pasajeros.
+Verificar cola vacía.
+
+Ventajas:
+
+Organización justa del proceso de embarque.
+Simulación del comportamiento real de una fila de espera.
+5. Implementación del Árbol Binario de Búsqueda
+
+Inicialmente los viajes se insertan siguiendo las reglas de un Árbol Binario de Búsqueda.
+
+Reglas:
+
+Valores menores a la izquierda.
+Valores mayores a la derecha.
+
+Esta estructura permite realizar búsquedas eficientes respecto a un almacenamiento lineal.
+
+6. Implementación del Árbol Rojo-Negro
+
+El proyecto utiliza un Árbol Rojo-Negro para mantener el balance de los viajes programados.
+
+Características:
+
+Cada nodo es rojo o negro.
+La raíz siempre es negra.
+No pueden existir dos nodos rojos consecutivos.
+Todos los caminos desde la raíz hasta una hoja contienen la misma cantidad de nodos negros.
+
+Para mantener estas propiedades se utilizan:
+
+Rotaciones a la izquierda.
+Rotaciones a la derecha.
+Recoloraciones.
+7. Ventajas del Árbol Rojo-Negro frente a un ABB
+
+Un ABB tradicional puede degradarse hasta comportarse como una lista enlazada cuando los datos son insertados en orden.
+
+Ejemplo:
+
+10
+ \
+ 20
+   \
+   30
+     \
+     40
+
+En este caso la búsqueda se vuelve menos eficiente.
+
+El árbol Rojo-Negro evita este problema mediante balanceo automático.
+
+Por esta razón mantiene una altura cercana a:
+
+O(log n)
+
+lo que mejora considerablemente el rendimiento de las operaciones de búsqueda e inserción.
+
+(Esta sección responde directamente a lo que pide el profesor).
+
+8. Resultados Obtenidos
+
+El sistema desarrollado permite:
+
+Registrar destinos.
+Registrar pasajeros.
+Gestionar colas FIFO.
+Embarcar pasajeros.
+Registrar viajes.
+Buscar viajes.
+Mostrar árboles de viajes.
+Consultar pasajeros.
+Generar estadísticas básicas.
+
+Todas las estructuras fueron implementadas mediante apuntadores y memoria dinámica.
+
+9. Conclusiones
+El uso de colas FIFO permitió representar correctamente el proceso de espera de pasajeros.
+Los árboles Rojo-Negro mejoran el rendimiento frente a árboles binarios sin balanceo.
+Los apuntadores permiten una administración dinámica de memoria y estructuras.
+El sistema cumple los requisitos planteados para la gestión básica del Terminal Portuario Turístico de Buenaventura.
